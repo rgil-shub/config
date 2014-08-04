@@ -1,0 +1,26 @@
+# /etc/sysconfig/iptables
+
+*filter
+
+# Default policy
+:INPUT DROP [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+
+# Outgoing connections
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+# DDos attacks (-A INPUT -s x.x.x.x -j DROP)
+# 
+
+# smtp,smtps,imaps,xmpp-client,xmpp-server
+-A INPUT -p tcp -m multiport --dports 25,465,993,5222,5269 -j ACCEPT
+
+# ssh 
+-A INPUT -p tcp -m tcp --dport 22 -m state --state NEW -m recent --set --name ssh --rsource
+-A INPUT -p tcp -m tcp --dport 22 -m state --state NEW -m recent ! --rcheck --seconds 300 --hitcount 2 --name ssh --rsource -j ACCEPT
+
+# Log and reject everything else
+# -A INPUT -j LOG --log-level 4 --log-prefix "FW-REJECT " 
+
+COMMIT
