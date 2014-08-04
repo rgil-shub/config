@@ -1,0 +1,63 @@
+### http://www.elho.net/mutt/maildir/ ###
+
+# This section describes the statements to put into your muttrc.
+
+# First tell Mutt to use the Maildir format:
+set mbox_type=Maildir
+
+# Next configure the locations of the common folders:
+set folder="~/Maildir"
+set mask="!^\\.[^.]"
+set mbox="~/Maildir"
+set record="+.Enviados"
+set postponed="+.Borradores"
+set spoolfile="~/Maildir"
+
+# Cache (Mutt > 1.5.7 & 1.5.12) 
+# http://dev.mutt.org/trac/wiki/MuttGuide/Caching
+set header_cache = "~/.cache/mutt"
+
+# Set up mailboxes by scanning for all subfolders in ~/Maildir:
+mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -type d -name ".*" -printf "+'%f' "`
+# Note that this requires find(1) from the GNU findutils, which on BSD systems usually is installed as gfind(1).
+
+# Add macros to make the folder browser usable by always using the mailboxes setup above:
+macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+
+# To additionally get straight to the folder browser when copying, moving and attaching mail, add the following macros:
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+macro compose A "<attach-message>?<toggle-mailboxes>" "attach message(s) to this message"
+
+### https://wiki.debian.org/Mutt ###
+
+# Set default editor
+set editor="vim"
+
+# Sort messages by thread
+set sort=threads
+set sort_aux = reverse-date-received
+
+# set from to ensure mutt doesn't put user@localhost.localhost 
+set from="rgil@telefonica.net"
+set use_from=yes
+set envelope_from="yes"
+
+# set realname
+set realname="Roberto Gil"
+
+# Color messages
+color index brightyellow default ~N
+color index brightred default ~D
+color header brightblue default ^Date:
+color header brightblue default ^User-Agent:
+color header brightblue default ^X-Mailer:
+color header brightblue default ^X-Operating-System:
+
+## OS Info.
+my_hdr X-Operating-System: `uname -s`, kernel `uname -r`
+
+# Collapse old messages
+set collapse_unread=no
+folder-hook . 'push <collapse-all>'
