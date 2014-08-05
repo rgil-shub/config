@@ -16,6 +16,7 @@ set spoolfile="~/Maildir"
 # Cache (Mutt > 1.5.7 & 1.5.12) 
 # http://dev.mutt.org/trac/wiki/MuttGuide/Caching
 set header_cache = "~/.cache/mutt"
+# set message_cachedir = "~/.cache/mutt"
 
 # Set up mailboxes by scanning for all subfolders in ~/Maildir:
 mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -type d -name ".*" -printf "+'%f' "`
