@@ -1,6 +1,18 @@
-### http://www.elho.net/mutt/maildir/ ###
+# ~/.muttrc
+#
+# References: 
+# -> http://www.elho.net/mutt/maildir
+# -> https://wiki.debian.org/Mutt
 
-# This section describes the statements to put into your muttrc.
+# set from to ensure mutt doesn't put user@localhost.localhost 
+set from="user@example.org"
+set use_from=yes
+set envelope_from="yes"
+
+# set realname
+set realname="username"
+
+### LOCAL ###
 
 # First tell Mutt to use the Maildir format:
 set mbox_type=Maildir
@@ -12,11 +24,6 @@ set mbox="~/Maildir"
 set record="+.Enviados"
 set postponed="+.Borradores"
 set spoolfile="~/Maildir"
-
-# Cache (Mutt > 1.5.7 & 1.5.12) 
-# http://dev.mutt.org/trac/wiki/MuttGuide/Caching
-set header_cache = "~/.cache/mutt"
-# set message_cachedir = "~/.cache/mutt"
 
 # Set up mailboxes by scanning for all subfolders in ~/Maildir:
 mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -type d -name ".*" -printf "+'%f' "`
@@ -31,7 +38,17 @@ macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 macro compose A "<attach-message>?<toggle-mailboxes>" "attach message(s) to this message"
 
-### https://wiki.debian.org/Mutt ###
+### IMAP ###
+
+# Cache (Mutt > 1.5.7 & 1.5.12) 
+# http://dev.mutt.org/trac/wiki/MuttGuide/Caching
+set header_cache = "~/.cache/mutt"
+# set message_cachedir = "~/.cache/mutt"
+
+# Display download progress every 5K
+set net_inc=5
+
+### OTHER OPTIONS ###
 
 # Set default editor
 set editor="vim"
@@ -39,14 +56,6 @@ set editor="vim"
 # Sort messages by thread
 set sort=threads
 set sort_aux = reverse-date-received
-
-# set from to ensure mutt doesn't put user@localhost.localhost 
-set from="rgil@telefonica.net"
-set use_from=yes
-set envelope_from="yes"
-
-# set realname
-set realname="Rober"
 
 # Color messages
 color index brightyellow default ~N
@@ -56,9 +65,10 @@ color header brightblue default ^User-Agent:
 color header brightblue default ^X-Mailer:
 color header brightblue default ^X-Operating-System:
 
-## OS Info.
+# OS Info.
 my_hdr X-Operating-System: `uname -s`, kernel `uname -r`
 
 # Collapse old messages
 set collapse_unread=no
 folder-hook . 'push <collapse-all>'
+
