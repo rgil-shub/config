@@ -10,10 +10,10 @@ fi
 [[ $- != *i* ]] && return
 
 # PROMPT
-# https://wiki.archlinux.org/index.php/Color_Bash_Prompt
-PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;35m\]\h'; else echo '\[\033[01;36m\]\u@\h'; fi)\[\033[01;37m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;36m\]:(\[\033[01;37m\] \")\\$\[\033[00m\] "
-# PS1='\[\033[01;33m\]\h \[\033[01;34m\]\W \$ \[\033[00m\]'
-# PS1='[\u@\h \W]\$ '
+# user prompt
+PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;37m\]\h'; else echo '\[\033[01;33m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\\$\[\033[00m\] "
+# root prompt
+# PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;31m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\\$\[\033[00m\] "
 
 # COLORS
 
@@ -27,12 +27,12 @@ fi
 # ls
 alias ls='ls --color'
 
-# dmesg (util-linux 2.23+)
-alias dmesg='dmesg --color'
+# dmesg (util-linux 2.23+ RHEL7+)
+# alias dmesg='dmesg --color'
 
 # grep
 alias grep='grep --color'
-export GREP_COLOR='1;35'
+# export GREP_COLOR='1;35'
 
 # man
 export LESS_TERMCAP_mb=$'\E[01;37m'
