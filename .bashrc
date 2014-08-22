@@ -1,5 +1,5 @@
 # ~/.bashrc
-# Version: 20140821
+# Version: 20140822
 
 # Source global definitions
 if [ -f /etc/bash.bashrc ]; then
@@ -10,10 +10,7 @@ fi
 [[ $- != *i* ]] && return
 
 # PROMPT
-# user prompt
-PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;37m\]\h'; else echo '\[\033[01;33m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\\$\[\033[00m\] "
-# root prompt
-# PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;31m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\\$\[\033[00m\] "
+PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;33m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\\$\[\033[00m\] "
 
 # COLORS
 
@@ -28,11 +25,11 @@ fi
 alias ls='ls --color'
 
 # dmesg (util-linux 2.23+ RHEL7+)
-# alias dmesg='dmesg --color'
+#alias dmesg='dmesg --color'
 
 # grep
 alias grep='grep --color'
-# export GREP_COLOR='1;35'
+#export GREP_COLOR='1;35'
 
 # man
 export LESS_TERMCAP_mb=$'\E[01;37m'
@@ -46,24 +43,26 @@ export LESS_TERMCAP_us=$'\E[01;36m'
 # ALIAS
 alias ll='ls -l'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
-alias update-grub='grub-mkconfig -o /boot/grub/grub.cfg'
-alias vi='vim'
 
+# VIM
+if [ -f /usr/bin/vim ]; then
+    export EDITOR=vim
+    alias vi='vim'
+fi
 
+# SHOPT
 # automatically fixes your 'cd folder' spelling mistakes
 shopt -s cdspell
-
 # the bash history is only saved when you close the terminal, 
 # not after each command. fix it..
 shopt -s histappend
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# archlinux
+# ARCHLINUX
 # get recommened packages when command not found (requires pkgfile --update)
-# source /usr/share/doc/pkgfile/command-not-found.bash
+#source /usr/share/doc/pkgfile/command-not-found.bash
+# update grub2 config
+#alias update-grub='grub-mkconfig -o /boot/grub/grub.cfg'
 
-# git
-export EDITOR=vim
