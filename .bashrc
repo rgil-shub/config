@@ -1,5 +1,5 @@
 # ~/.bashrc
-# Version: 20140822
+# Version: 2014082218
 
 # Source global definitions
 if [ -f /etc/bash.bashrc ]; then
@@ -15,11 +15,7 @@ PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[0
 # COLORS
 
 # term
-if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-        export TERM='xterm-256color'
-else
-        export TERM='xterm-color'
-fi
+export TERM='xterm-256color'
 
 # ls
 alias ls='ls --color'
@@ -29,16 +25,16 @@ alias ls='ls --color'
 
 # grep
 alias grep='grep --color'
-#export GREP_COLOR='1;35'
+# export GREP_COLOR='1;31'
 
 # man
-export LESS_TERMCAP_mb=$'\E[01;37m'
-export LESS_TERMCAP_md=$'\E[01;37m'
+export LESS_TERMCAP_mb=$'\E[01;34m'
+export LESS_TERMCAP_md=$'\E[01;34m'
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_so=$'\E[01;44;37m'
 export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;36m'
+export LESS_TERMCAP_us=$'\E[04;37m'
 
 # ALIAS
 alias ll='ls -l'
@@ -46,7 +42,7 @@ alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\
 
 # VIM
 if [ -f /usr/bin/vim ]; then
-    export EDITOR=vim
+    export EDITOR='vim'
     alias vi='vim'
 fi
 
