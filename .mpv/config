@@ -1,0 +1,18 @@
+# ~/.mpv/config
+#
+# mpv config file
+# http://mpv.io/
+# Version: 20140822
+
+# VIDEO
+# Linux with Intel GPUs only
+vo=vaapi
+hwdec=vaapi
+
+# AUDIO
+# ao=pulse
+
+# LANGUAGE
+alang=eng,spa
+slang=eng,spa
+
