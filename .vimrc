@@ -1,5 +1,5 @@
 " .vimrc
-" Version: 20140822
+" Version: 2014082209
 " http://vimdoc.sourceforge.net/htmldoc/options.html
 
 " COLOR
@@ -34,6 +34,7 @@ set tabstop=4         " tab = 4 spaces
 set shiftwidth=4      " tab after indent = 4 spaces
 set softtabstop=4     " real tab character instead of spaces
 set expandtab         " use spaces instead of tabs to indent
+set autoindent        " copy the indentation from the previous line
 
 " MAPPINGS
 nmap :W :w
