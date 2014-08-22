@@ -1,5 +1,5 @@
 " .vimrc
-" Version: 2014082209
+" Version: 2014082210
 " http://vimdoc.sourceforge.net/htmldoc/options.html
 
 " COLOR
@@ -28,6 +28,7 @@ set ignorecase        " Ignore case in search patterns
 set smartcase         " Search pattern with upper case characters
 set incsearch         " Incremental searching
 set hlsearch          " Highlight all matches
+set wrapscan          " Searches wrap around the end of the file
 
 " TABS
 set tabstop=4         " tab = 4 spaces
