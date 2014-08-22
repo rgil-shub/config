@@ -1,5 +1,5 @@
 " .vimrc
-" Version: 20140821
+" Version: 20140822
 " http://vimdoc.sourceforge.net/htmldoc/options.html
 
 " COLOR
@@ -12,10 +12,10 @@ set showmatch         " Show matching brackets
 
 " INTERFACE
 set showcmd           " Show (partial) command in the last line of the screen
-set visualbell        " Use visual bell instead of beeping
 set wildmenu          " Visual autocomplete for command menu
 " set cursorline      " Highlight current line
 " set number          " Show line numbers
+" set visualbell      " Use visual bell instead of beeping
 
 " GENERAL
 set autoread          " Auto read when a file is changed from the outside
