@@ -2,7 +2,7 @@
 #
 # Requires: gst-libav libva libva-intel-driver
 # URL: http://mpv.io/
-# Version: 20140822
+# Version: 20140825
 
 # VIDEO
 # Linux with Intel GPUs only
