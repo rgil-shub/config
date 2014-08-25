@@ -1,7 +1,7 @@
 # ~/.mpv/config
 #
-# mpv config file
-# http://mpv.io/
+# Requires: gst-libav libva libva-intel-driver
+# URL: http://mpv.io/
 # Version: 20140822
 
 # VIDEO
