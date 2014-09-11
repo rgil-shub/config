@@ -1,7 +1,12 @@
 # ~/.bashrc
-# Version: 2014082218
+# Version: 20140911
 
 # Source global definitions
+# RHEL
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+# Arch / Debian / Ubuntu
 if [ -f /etc/bash.bashrc ]; then
     . /etc/bash.bashrc
 fi
@@ -36,9 +41,14 @@ export LESS_TERMCAP_so=$'\E[01;44;37m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;37m'
 
-# ALIAS
+# ls
 alias ll='ls -l'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
+
+# safety
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I' 
 
 # VIM
 if [ -f /usr/bin/vim ]; then
