@@ -1,10 +1,10 @@
 " .vimrc
-" Version: 2014082210
+" Version: 20140918
 " http://vimdoc.sourceforge.net/htmldoc/options.html
 
 " COLOR
 set background=dark   " (dark/light) background
-" colorscheme desert
+" colorscheme monokai " colorscheme dir: ~/.vim/colors
 
 " SYNTAX
 syntax on             " Syntax highlighting
