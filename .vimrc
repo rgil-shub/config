@@ -1,7 +1,13 @@
 " .vimrc
-" Version: 20140923
-" Requires: vim-spell-en vim-spell-es (ftp://ftp.vim.org/pub/vim/runtime/spell)
-" http://vimdoc.sourceforge.net/htmldoc/options.html
+
+" Requires: 
+" + monokai colorscheme
+" + vim-spell-en vim-spell-es
+" URLs:
+" + https://github.com/sickill/vim-monokai
+" + ftp://ftp.vim.org/pub/vim/runtime/spell
+" + http://vimdoc.sourceforge.net/htmldoc/options.html
+" Version: 2014092315
 
 " SPELL 
 " set spell
