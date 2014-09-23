@@ -1,6 +1,12 @@
 " .vimrc
-" Version: 20140918
+" Version: 20140923
+" Requires: vim-spell-en vim-spell-es (ftp://ftp.vim.org/pub/vim/runtime/spell)
 " http://vimdoc.sourceforge.net/htmldoc/options.html
+
+" SPELL 
+" set spell
+" set spelllang=en
+" set spelllang=es
 
 " COLOR
 set background=dark   " (dark/light) background
