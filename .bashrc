@@ -17,7 +17,7 @@ fi
 # PROMPT
 PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;33m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\\$\[\033[00m\] "
 
-# COLORS
+# ALIAS & COLORS
 
 # term
 export TERM='xterm-256color'
@@ -46,7 +46,7 @@ export LESS_TERMCAP_us=$'\E[04;37m'
 # safety
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='rm -i'
+alias rm='rm -i'    # RHEL5
 #alias rm='rm -I'   # RHEL6+
 
 # VIM
