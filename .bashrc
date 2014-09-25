@@ -1,5 +1,5 @@
 # ~/.bashrc
-# Version: 20140911
+# Version: 20140925
 
 # Source global definitions
 # RHEL
@@ -24,13 +24,15 @@ export TERM='xterm-256color'
 
 # ls
 alias ls='ls --color'
+alias ll='ls -l'
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
 
 # dmesg (util-linux 2.23+ RHEL7+)
 #alias dmesg='dmesg --color'
 
 # grep
 alias grep='grep --color'
-# export GREP_COLOR='1;31'
+#export GREP_COLOR='1;31'
 
 # man
 export LESS_TERMCAP_mb=$'\E[01;34m'
@@ -41,14 +43,11 @@ export LESS_TERMCAP_so=$'\E[01;44;37m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;37m'
 
-# ls
-alias ll='ls -l'
-alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
-
 # safety
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='rm -I' 
+alias rm='rm -i'
+#alias rm='rm -I'   # RHEL6+
 
 # VIM
 if [ -f /usr/bin/vim ]; then
