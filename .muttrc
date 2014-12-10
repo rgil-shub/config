@@ -1,6 +1,6 @@
 # ~/.muttrc
 #
-# Version: 2014121016
+# Version: 2014121017
 #
 # References: 
 # -> http://www.elho.net/mutt/maildir
@@ -97,9 +97,15 @@ color search default green
 color body magenta default "(ftp|http|https)://[^ ]+"  # point out URLs
 color body magenta default [-a-z_0-9.]+@[-a-z_0-9.]+   # e-mail addresses
 color underline brightgreen default
+
+# pgp
 color body brightyellow default "^gpg: .*"
+color body brightyellow default "^Hash: .*"
 color body brightred default "^gpg: Firma INCORRECTA.*"
 color body brightred default "^gpg: BAD signature.*"
 color body brightgreen default "^gpg: Firma correcta.*"
 color body brightgreen default "^gpg: Good signature .*"
+color body brightcyan default "-----BEGIN PGP SIGNED MESSAGE-----"
+color body brightcyan default "-----BEGIN PGP SIGNATURE-----"
+color body brightcyan default "-----END PGP SIGNATURE-----"
 
