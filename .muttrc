@@ -14,6 +14,13 @@ set envelope_from="yes"
 # set realname
 set realname="username"
 
+# pgp
+set pgp_use_gpg_agent = yes
+set pgp_sign_as = your_key_id 
+set pgp_timeout = 3600
+set crypt_autosign = yes
+set crypt_replyencrypt = yes
+
 ### LOCAL ###
 
 # First tell Mutt to use the Maildir format:
