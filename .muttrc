@@ -1,6 +1,6 @@
 # ~/.muttrc
 #
-# Version: 2014121012
+# Version: 2014121016
 #
 # References: 
 # -> http://www.elho.net/mutt/maildir
@@ -69,18 +69,37 @@ set editor="vim"
 set sort=threads
 set sort_aux = reverse-date-received
 
-# Color messages
-color index brightyellow default ~N
-color index brightred default ~D
-color header brightblue default ^Date:
-color header brightblue default ^User-Agent:
-color header brightblue default ^X-Mailer:
-color header brightblue default ^X-Operating-System:
+# Collapse old messages
+set collapse_unread=no
+folder-hook . 'push <collapse-all>'
 
 # OS Info.
 my_hdr X-Operating-System: `uname -s`, kernel `uname -r`
 
-# Collapse old messages
-set collapse_unread=no
-folder-hook . 'push <collapse-all>'
+### COLOR DEFINITIONS ###
+
+color hdrdefault white default
+color header brightwhite black ^(From|Subject):
+color header white default ^User-Agent:
+color header white default ^X-Mailer:
+color header white default ^X-Operating-System:
+color indicator brightyellow black
+color status brightblue black
+color error brightred default
+color message brightgreen default
+color tree blue default
+color quoted blue default
+color signature magenta default
+color tilde magenta default
+color markers brightcyan default
+color attachment brightcyan default
+color search default green
+color body magenta default "(ftp|http|https)://[^ ]+"  # point out URLs
+color body magenta default [-a-z_0-9.]+@[-a-z_0-9.]+   # e-mail addresses
+color underline brightgreen default
+color body brightyellow default "^gpg: .*"
+color body brightred default "^gpg: Firma INCORRECTA.*"
+color body brightred default "^gpg: BAD signature.*"
+color body brightgreen default "^gpg: Firma correcta.*"
+color body brightgreen default "^gpg: Good signature .*"
 
