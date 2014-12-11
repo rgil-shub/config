@@ -1,6 +1,6 @@
 # ~/.muttrc
 #
-# Version: 20141211 (mutt 1.5.20)
+# Version: 2014121120 (mutt 1.5.20)
 #
 # References: 
 # -> http://www.elho.net/mutt/maildir
@@ -73,8 +73,13 @@ set sort_aux = reverse-date-received
 set collapse_unread=no
 folder-hook . 'push <collapse-all>'
 
-# OS Info.
-my_hdr X-Operating-System: `uname -s`, kernel `uname -r`
+# Headers
+ignore *
+unignore from subject to cc date x-mailer x-url user-agent x-os x-pgp-key
+unhdr_order *
+hdr_order subject from to cc date
+my_hdr X-OS: `uname -s` `uname -r`
+my_hdr X-PGP-Key: http://bit.ly/13dv8SO
 
 ### COLOR DEFINITIONS ###
 
@@ -96,10 +101,12 @@ color index brightred default "~D"   # deleted messages
 
 # headers
 color hdrdefault white default
-color header brightwhite black ^(From|Subject):
-color header white default ^User-Agent:
-color header white default ^X-Mailer:
-color header white default ^X-Operating-System:
+color header brightyellow default ^(Subject):
+color header brightwhite default ^(From):
+color header magenta default ^User-Agent:
+color header magenta default ^X-Mailer:
+color header magenta default ^X-OS:
+color header magenta default ^X-PGP-Key:
 
 # body
 color quoted blue default
