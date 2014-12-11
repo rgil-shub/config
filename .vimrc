@@ -7,7 +7,7 @@
 " + https://github.com/sickill/vim-monokai
 " + ftp://ftp.vim.org/pub/vim/runtime/spell
 " + http://vimdoc.sourceforge.net/htmldoc/options.html
-" Version: 2014092315
+" Version: 20141211
 
 " SPELL 
 " set spell
@@ -25,7 +25,7 @@ set showmatch         " Show matching brackets
 " INTERFACE
 set showcmd           " Show (partial) command in the last line of the screen
 set wildmenu          " Visual autocomplete for command menu
-" set cursorline      " Highlight current line
+set cursorline        " Highlight current line
 " set number          " Show line numbers
 " set visualbell      " Use visual bell instead of beeping
 
