@@ -1,6 +1,6 @@
 # ~/.muttrc
 #
-# Version: 2014121017
+# Version: 20141211 (mutt 1.5.20)
 #
 # References: 
 # -> http://www.elho.net/mutt/maildir
@@ -78,22 +78,31 @@ my_hdr X-Operating-System: `uname -s`, kernel `uname -r`
 
 ### COLOR DEFINITIONS ###
 
+# basic colors
+color normal white default
+color error brightred default
+color tilde magenta default
+color message brightgreen default
+color markers brightcyan default
+color attachment brightcyan default
+color search default green
+color status brightblue black
+color indicator brightyellow black
+color tree blue default
+
+# index
+color index brightwhite default "~O" # new messages
+
+# headers
 color hdrdefault white default
 color header brightwhite black ^(From|Subject):
 color header white default ^User-Agent:
 color header white default ^X-Mailer:
 color header white default ^X-Operating-System:
-color indicator brightyellow black
-color status brightblue black
-color error brightred default
-color message brightgreen default
-color tree blue default
+
+# body
 color quoted blue default
 color signature magenta default
-color tilde magenta default
-color markers brightcyan default
-color attachment brightcyan default
-color search default green
 color body magenta default "(ftp|http|https)://[^ ]+"  # point out URLs
 color body magenta default [-a-z_0-9.]+@[-a-z_0-9.]+   # e-mail addresses
 color underline brightgreen default
