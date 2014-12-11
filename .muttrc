@@ -92,6 +92,7 @@ color tree blue default
 
 # index
 color index brightwhite default "~O" # new messages
+color index brightred default "~D"   # deleted messages
 
 # headers
 color hdrdefault white default
