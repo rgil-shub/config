@@ -75,10 +75,10 @@ folder-hook . 'push <collapse-all>'
 
 # Headers
 ignore *
-unignore from subject to cc date x-mailer x-url user-agent x-os x-pgp-key
+unignore from subject to cc date x-mailer x-url user-agent x-operating-system x-pgp-key
 unhdr_order *
 hdr_order subject from to cc date
-my_hdr X-OS: `uname -s` `uname -r`
+my_hdr X-Operating-System: `uname -s` `uname -r`
 # my_hdr X-PGP-Key: http://example.org/~user/pubkey.asc
 
 ### COLOR DEFINITIONS ###
@@ -101,11 +101,11 @@ color index brightred default "~D"   # deleted messages
 
 # headers
 color hdrdefault white default
-color header brightyellow default ^(Subject):
-color header brightwhite default ^(From):
+color header brightyellow default ^Subject:
+color header brightwhite default ^From:
 color header magenta default ^User-Agent:
 color header magenta default ^X-Mailer:
-color header magenta default ^X-OS:
+color header magenta default ^X-Operating-System:
 color header magenta default ^X-PGP-Key:
 
 # body
