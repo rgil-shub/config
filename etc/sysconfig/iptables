@@ -1,4 +1,6 @@
 # /etc/sysconfig/iptables
+#
+# Version: 20141213
 
 *filter
 
@@ -12,6 +14,9 @@
 
 # DDos attacks (-A INPUT -s x.x.x.x -j DROP)
 # 
+
+# localhost
+-A INPUT -i lo -j ACCEPT
 
 # smtp,smtps,imaps,xmpp-client,xmpp-server
 -A INPUT -p tcp -m multiport --dports 25,465,993,5222,5269 -j ACCEPT
