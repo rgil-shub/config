@@ -1,6 +1,6 @@
 # ~/.muttrc
 #
-# Version: 2014121120 (mutt 1.5.20)
+# Version: 20141217 (mutt 1.5.20)
 #
 # References: 
 # -> http://www.elho.net/mutt/maildir
@@ -97,6 +97,7 @@ color tree blue default
 
 # index
 color index brightwhite default "~O" # new messages
+color index brightwhite default "~N" # new messages
 color index brightred default "~D"   # deleted messages
 
 # headers
