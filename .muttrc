@@ -1,6 +1,6 @@
 # ~/.muttrc
 #
-# Version: 20141220 (mutt 1.5.23)
+# Version: 2014122018 (mutt 1.5.23)
 #
 # References: 
 # -> http://www.elho.net/mutt/maildir
@@ -23,6 +23,9 @@ set pgp_sign_as = your_key_id
 set pgp_timeout = 3600
 set crypt_autosign = yes
 set crypt_replyencrypt = yes
+
+# HTML  (Requires: .mailcap + links/w3m)
+# auto_view text/html
 
 ### LOCAL ###
 
