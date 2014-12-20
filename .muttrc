@@ -1,6 +1,6 @@
 # ~/.muttrc
 #
-# Version: 20141217 (mutt 1.5.20)
+# Version: 20141220 (mutt 1.5.23)
 #
 # References: 
 # -> http://www.elho.net/mutt/maildir
@@ -54,8 +54,8 @@ macro compose A "<attach-message>?<toggle-mailboxes>" "attach message(s) to this
 
 # Cache (Mutt > 1.5.7 & 1.5.12) 
 # http://dev.mutt.org/trac/wiki/MuttGuide/Caching
-set header_cache = "~/.cache/mutt"
-# set message_cachedir = "~/.cache/mutt"
+set header_cache = "~/.cache/mutt/headers"
+set message_cachedir = "~/.cache/mutt/messages"
 
 # Display download progress every 5K
 set net_inc=5
