@@ -6,11 +6,11 @@
 [DEFAULT]
 
 destemail = user@example.org
-sender = fail2ban@example.org
+sender    = fail2ban@example.org
 
 ignoreip = 127.0.0.1
 bantime  = 604800
-findtime  = 604800
+findtime = 604800
 maxretry = 3 
 
 backend = polling
@@ -22,9 +22,9 @@ action = %(banaction)s[name=%(__name__)s, bantime="%(bantime)s", port="%(port)s"
 ### JAILS ###
 
 [pam-generic]                                                                                                                          
-enabled=true
+enabled   = true
 banaction = iptables-allports
-logpath  = %(syslog_authpriv)s
+logpath   = %(syslog_authpriv)s
 
 [sshd]
 enabled = true
@@ -38,13 +38,13 @@ logpath = %(sshd_log)s
 
 [postfix]
 enabled = true
-port     = smtp,465,submission
-logpath  = %(postfix_log)s
+port    = smtp,465,submission
+logpath = %(postfix_log)s
 
 [postfix-sasl]
 enabled = true
-port     = smtp,465,submission,imap3,imaps,pop3,pop3s
-logpath  = %(postfix_log)s
+port    = smtp,465,submission,imap3,imaps,pop3,pop3s
+logpath = %(postfix_log)s
 
 [dovecot]
 enabled = true
@@ -53,37 +53,37 @@ logpath = /var/log/dovecot.log
 
 [apache-auth]
 enabled = true
-port     = http,https
-logpath  = /var/log/httpd/*error_log
+port    = http,https
+logpath = /var/log/httpd/*error_log
 
 [apache-badbots]
-enabled = true
+enabled  = true
 port     = http,https
 logpath  = /var/log/httpd/*access_log
 maxretry = 1
 
 [apache-nohome]
-enabled = true
+enabled  = true
 port     = http,https
 logpath  = /var/log/httpd/*error_log
 maxretry = 1
 
 [apache-overflows]
-enabled = true
+enabled  = true
 port     = http,https
 logpath  = /var/log/httpd/*error_log
 maxretry = 1
 
 [apache-shellshock]
-enabled = true
-port    = http,https
-logpath = /var/log/httpd/*error_log
+enabled  = true
+port     = http,https
+logpath  = /var/log/httpd/*error_log
 maxretry = 1
 
 [php-url-fopen]
-enabled = true
-port    = http,https
-logpath = /var/log/httpd/*access_log
+enabled  = true
+port     = http,https
+logpath  = /var/log/httpd/*access_log
 maxretry = 1
 
 [prosody-auth]
@@ -93,15 +93,15 @@ logpath = /var/lib/prosody/prosody.log
 
 [roundcube-auth]
 enabled = true
-port     = http,https
-logpath  = /var/log/roundcubemail/userlogins
+port    = http,https
+logpath = /var/log/roundcubemail/userlogins
 
 [owncloud-auth]
 enabled = true
-port = http,https
+port    = http,https
 logpath = /var/lib/owncloud/data/owncloud.log
 
 [dokuwiki-auth]
 enabled = true
-port = http,https
+port    = http,https
 logpath = /var/lib/dokuwiki/data/cache/loglog.log
