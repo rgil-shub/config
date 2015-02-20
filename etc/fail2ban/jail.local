@@ -1,5 +1,6 @@
 # /etc/fail2ban/jail.local
 
+# Requires: whois
 # Version: 20150220 (fail2ban 0.9.1)
 
 [DEFAULT]
