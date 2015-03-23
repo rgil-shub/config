@@ -1,6 +1,6 @@
 # /etc/sysconfig/iptables
 #
-# Version: 20141213
+# Version: 20150323
 
 *filter
 
@@ -18,12 +18,19 @@
 # localhost
 -A INPUT -i lo -j ACCEPT
 
-# smtp,smtps,imaps,xmpp-client,xmpp-server
--A INPUT -p tcp -m multiport --dports 25,465,993,5222,5269 -j ACCEPT
+# smtp,http,https,submission,imaps,xmpp-client,xmpp-server
+-A INPUT -p tcp -m multiport --dports 25,80,443,587,993,5222,5269 -j ACCEPT
+
 
 # ssh 
 -A INPUT -p tcp -m tcp --dport 22 -m state --state NEW -m recent --set --name ssh --rsource
 -A INPUT -p tcp -m tcp --dport 22 -m state --state NEW -m recent ! --rcheck --seconds 300 --hitcount 2 --name ssh --rsource -j ACCEPT
+
+# smtp
+-A OUTPUT -d 127.0.0.1 -p tcp -m tcp --dport 25 -j ACCEPT
+-A OUTPUT -p tcp -m tcp --dport 25 -m owner --gid-owner postfix -j ACCEPT
+-A OUTPUT -p tcp -m tcp --dport 25 -m owner --uid-owner root -j ACCEPT
+-A OUTPUT -p tcp -m tcp --dport 25 -j REJECT --reject-with icmp-port-unreachable
 
 # Log and reject everything else
 # -A INPUT -j LOG --log-level 4 --log-prefix "FW-REJECT " 
