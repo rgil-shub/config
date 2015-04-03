@@ -1,7 +1,7 @@
 # /etc/fail2ban/jail.local
 
 # Requires: whois
-# Version: 20150220 (fail2ban 0.9.1)
+# Version: 20150403 (fail2ban 0.9.1)
 
 [DEFAULT]
 
@@ -67,6 +67,12 @@ enabled  = true
 port     = http,https
 logpath  = /var/log/httpd/*error_log
 maxretry = 1
+
+[apache-noscript]
+enabled = true
+port     = http,https
+logpath  = /var/log/httpd/*error_log
+maxretry = 6
 
 [apache-overflows]
 enabled  = true
