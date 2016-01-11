@@ -1,5 +1,5 @@
 # ~/.bashrc
-# Version: 20140925
+# Version: 20160111
 
 # Source global definitions
 # RHEL
@@ -28,7 +28,10 @@ alias ll='ls -l'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
 
 # dmesg (util-linux 2.23+ RHEL7+)
-#alias dmesg='dmesg --color'
+alias dmesg='dmesg --color'
+
+# dd (coreutils 8.22-13+ RHEL7+)
+alias dd='dd status=progress'
 
 # grep
 alias grep='grep --color'
