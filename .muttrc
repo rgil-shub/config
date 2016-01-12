@@ -1,6 +1,6 @@
 # ~/.muttrc
 #
-# Version: 2014122018 (mutt 1.5.23)
+# Version: 20160112 (mutt 1.5.24)
 #
 # References: 
 # -> http://www.elho.net/mutt/maildir
@@ -41,7 +41,7 @@ set postponed="+.Borradores"
 set spoolfile="~/Maildir"
 
 # Set up mailboxes by scanning for all subfolders in ~/Maildir:
-mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -type d -name ".*" -printf "+'%f' "`
+mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -name ".*" -printf "+'%f' "`
 # Note that this requires find(1) from the GNU findutils, which on BSD systems usually is installed as gfind(1).
 
 # Add macros to make the folder browser usable by always using the mailboxes setup above:
