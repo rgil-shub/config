@@ -1,5 +1,5 @@
 # ~/.bashrc
-# Version: 20160111
+# Version: 20160304
 
 # Source global definitions
 # RHEL
@@ -36,6 +36,9 @@ alias dd='dd status=progress'
 # grep
 alias grep='grep --color'
 #export GREP_COLOR='1;31'
+
+# mount
+alias mount='mount | column -t'
 
 # man
 export LESS_TERMCAP_mb=$'\E[01;34m'
