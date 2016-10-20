@@ -2,12 +2,16 @@
 #
 # Requires: gst-libav libva libva-intel-driver
 # URL: http://mpv.io/
-# Version: 20140825
+# Version: 20161020
 
 # VIDEO
-# Linux with Intel GPUs only
-vo=vaapi
-hwdec=vaapi
+
+# Intel GPUs only
+# vo=vaapi
+# hwdec=vaapi
+
+# Auto Hardware Decode
+hwdec=auto
 
 # AUDIO
 # ao=pulse
