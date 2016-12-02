@@ -1,10 +1,11 @@
 # ~/.muttrc
 #
-# Version: 20160112 (mutt 1.5.24)
+# Version: 20161202 (mutt 1.7.1)
 #
-# References: 
+# References:
 # -> http://www.elho.net/mutt/maildir
 # -> https://wiki.debian.org/Mutt
+# -> https://dev.mutt.org/trac/wiki/MuttGuide
 
 # set from to ensure mutt doesn't put user@localhost.localhost 
 set from="user@example.org"
@@ -15,7 +16,7 @@ set envelope_from="yes"
 set realname="username"
 
 # set signature
-set signature="~/.signature"
+# set signature="~/.mutt/signature"
 
 # pgp
 set pgp_use_gpg_agent = yes
@@ -25,7 +26,7 @@ set crypt_autosign = yes
 set crypt_replyencrypt = yes
 
 # HTML  (Requires: .mailcap + links/w3m)
-# auto_view text/html
+auto_view text/html
 
 ### LOCAL ###
 
@@ -57,8 +58,8 @@ macro compose A "<attach-message>?<toggle-mailboxes>" "attach message(s) to this
 
 # Cache (Mutt > 1.5.7 & 1.5.12) 
 # http://dev.mutt.org/trac/wiki/MuttGuide/Caching
-set header_cache = "~/.cache/mutt/headers"
-set message_cachedir = "~/.cache/mutt/messages"
+set header_cache = "~/.mutt/headers"
+set message_cachedir = "~/.mutt/messages"
 
 # Display download progress every 5K
 set net_inc=5
@@ -66,7 +67,7 @@ set net_inc=5
 ### OTHER OPTIONS ###
 
 # Set default editor
-set editor="vim"
+set editor="vim -c 'set spell spelllang=es,en'"
 
 # Sort messages by thread
 set sort=threads
@@ -75,6 +76,12 @@ set sort_aux = reverse-date-received
 # Collapse old messages
 set collapse_unread=no
 folder-hook . 'push <collapse-all>'
+
+# Alias
+set alias_file= ~/.mutt/aliases
+set sort_alias= alias
+set reverse_alias=yes
+source $alias_file
 
 # Headers
 ignore *
@@ -129,4 +136,3 @@ color body brightgreen default "^gpg: Good signature .*"
 color body brightcyan default "-----BEGIN PGP SIGNED MESSAGE-----"
 color body brightcyan default "-----BEGIN PGP SIGNATURE-----"
 color body brightcyan default "-----END PGP SIGNATURE-----"
-
