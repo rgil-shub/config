@@ -6,6 +6,10 @@
 # -> http://www.elho.net/mutt/maildir
 # -> https://wiki.debian.org/Mutt
 # -> https://dev.mutt.org/trac/wiki/MuttGuide
+#
+# Requires:
+# + vim
+# + w3m
 
 # set from to ensure mutt doesn't put user@localhost.localhost 
 set from="user@example.org"
