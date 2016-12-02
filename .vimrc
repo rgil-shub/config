@@ -3,11 +3,13 @@
 " Requires: 
 " + monokai colorscheme
 " + vim-spell-en vim-spell-es
+" + powerline
 " URLs:
 " + https://github.com/sickill/vim-monokai
 " + ftp://ftp.vim.org/pub/vim/runtime/spell
 " + http://vimdoc.sourceforge.net/htmldoc/options.html
-" Version: 20150123
+" +  https://powerline.readthedocs.io
+" Version: 20161202
 
 " SPELL 
 " set spell
@@ -56,3 +58,11 @@ nmap :W :w
 nmap :X :x
 nmap :Q :q
 
+" POWERLINE
+let g:powerline_loaded = 1
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+" set showtabline=2  " Always display the tabline, even if there is only one tab
+set laststatus=2     " Always display the statusline in all windows
+set noshowmode       " Hide the default mode text (e.g. -- INSERT -- below the statusline)
