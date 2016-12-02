@@ -1,0 +1,8 @@
+# ~/.mailcap                                                                                                                                                                  
+#
+# Version: 20161202
+#
+# Requires: 
+# + w3m
+
+text/html;      w3m -I %{charset} -T text/html; copiousoutput;

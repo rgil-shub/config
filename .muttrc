@@ -16,7 +16,7 @@ set envelope_from="yes"
 set realname="username"
 
 # set signature
-# set signature="~/.mutt/signature"
+set signature="~/.mutt/signature"
 
 # pgp
 set pgp_use_gpg_agent = yes
@@ -26,6 +26,7 @@ set crypt_autosign = yes
 set crypt_replyencrypt = yes
 
 # HTML  (Requires: .mailcap + links/w3m)
+set mailcap_path="~/.mutt/mailcap"
 auto_view text/html
 
 ### LOCAL ###
