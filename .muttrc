@@ -1,6 +1,6 @@
 # ~/.muttrc
 #
-# Version: 20161202 (mutt 1.7.1)
+# Version: 20161205 (mutt 1.7.1)
 #
 # References:
 # -> http://www.elho.net/mutt/maildir
@@ -32,6 +32,9 @@ set crypt_replyencrypt = yes
 # HTML  (Requires: .mailcap + links/w3m)
 set mailcap_path="~/.mutt/mailcap"
 auto_view text/html
+
+# mutt version
+push <show-version>
 
 ### LOCAL ###
 
