@@ -11,6 +11,10 @@
 # + vim
 # + w3m
 
+# set language
+set charset="utf-8"
+set locale="es_ES.utf-8"
+
 # set from to ensure mutt doesn't put user@localhost.localhost 
 set from="user@example.org"
 set use_from=yes
@@ -23,6 +27,7 @@ set realname="username"
 set signature="~/.mutt/signature"
 
 # pgp
+# source ~/.mutt/gpg.rc
 set pgp_use_gpg_agent = yes
 set pgp_sign_as = your_key_id 
 set pgp_timeout = 3600
@@ -52,6 +57,14 @@ set spoolfile="~/Maildir"
 # Set up mailboxes by scanning for all subfolders in ~/Maildir:
 mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -name ".*" -printf "+'%f' "`
 # Note that this requires find(1) from the GNU findutils, which on BSD systems usually is installed as gfind(1).
+# mailboxes ! + `\
+#  for file in ~/Maildir/.*; do \
+#    box=$(basename "$file"); \
+#    if [ ! "$box" = '.' -a ! "$box" = '..' -a ! "$box" = '.customflags' \
+#        -a ! "$box" = '.subscriptions' ]; then \
+#      echo -n "\"+$box\" "; \
+#    fi; \
+#  done`
 
 # Add macros to make the folder browser usable by always using the mailboxes setup above:
 macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
