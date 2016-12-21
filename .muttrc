@@ -1,6 +1,6 @@
 # ~/.muttrc
 #
-# Version: 20161217 (mutt 1.7.2)
+# Version: 20161221 (mutt 1.7.2)
 #
 # References:
 # -> http://www.elho.net/mutt/maildir
@@ -10,6 +10,7 @@
 # Requires:
 # + vim
 # + w3m
+# + spamassassin
 
 # set language
 set charset="utf-8"
@@ -28,8 +29,8 @@ set signature="~/.mutt/signature"
 
 # GnuPG
 # https://dev.mutt.org/trac/wiki/MuttGuide/UseGPG
-# source ~/.mutt/gpg.rc
-set pgp_use_gpg_agent = yes
+source ~/.mutt/gpg.rc
+# set pgp_use_gpg_agent = yes
 set pgp_sign_as = your_key_id 
 set pgp_timeout = 3600
 set crypt_autosign = yes
@@ -56,16 +57,16 @@ set postponed="+.Borradores"
 set spoolfile="~/Maildir"
 
 # Set up mailboxes by scanning for all subfolders in ~/Maildir:
-mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -name ".*" -printf "+'%f' "`
+# mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -name ".*" -printf "+'%f' "`
 # Note that this requires find(1) from the GNU findutils, which on BSD systems usually is installed as gfind(1).
-# mailboxes ! + `\
-#  for file in ~/Maildir/.*; do \
-#    box=$(basename "$file"); \
-#    if [ ! "$box" = '.' -a ! "$box" = '..' -a ! "$box" = '.customflags' \
-#        -a ! "$box" = '.subscriptions' ]; then \
-#      echo -n "\"+$box\" "; \
-#    fi; \
-#  done`
+mailboxes ! + `\
+for file in ~/Maildir/.*; do \
+    box=$(basename "$file"); \
+    if [ ! "$box" = '.' -a ! "$box" = '..' -a ! "$box" = '.customflags' \
+        -a ! "$box" = '.subscriptions' ]; then \
+        echo -n "\"+$box\" "; \
+    fi; \
+done`
 
 # Add macros to make the folder browser usable by always using the mailboxes setup above:
 macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
@@ -75,6 +76,13 @@ macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 macro compose A "<attach-message>?<toggle-mailboxes>" "attach message(s) to this message"
+
+# Save the message to your archive folder:
+macro index A  "<save-message>=.Archivos<enter>"  "mark message as Archived"
+macro pager A  "<save-message>=.Archivos<enter>"  "mark message as Archived"
+
+# Train spamassassin and move message to spam folder
+macro index S "<enter-command>unset wait_key<enter><pipe-entry>sa-learn --spam<enter><enter-command>set wait_key<enter><save-message>=.Spam<enter>" "mark message as SPAM"
 
 ### IMAP ###
 
@@ -87,6 +95,9 @@ set message_cachedir = "~/.mutt/messages"
 set net_inc=5
 
 ### OTHER OPTIONS ###
+
+# Stops pager viewing next message
+set pager_stop
 
 # Set default editor
 set editor="vim -c 'set spell spelllang=es,en'"
