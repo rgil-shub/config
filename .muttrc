@@ -1,6 +1,6 @@
 # ~/.muttrc
 #
-# Version: 20161221 (mutt 1.7.2)
+# Version: 20160104 (mutt 1.7.2)
 #
 # References:
 # -> http://www.elho.net/mutt/maildir
@@ -115,6 +115,10 @@ set alias_file= ~/.mutt/aliases
 set sort_alias= alias
 set reverse_alias=yes
 source $alias_file
+
+# Forwarding messages with attachments
+set mime_forward
+set mime_forward_rest=yes
 
 # Headers
 ignore *
