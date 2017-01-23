@@ -1,6 +1,6 @@
 # ~/.muttrc
 #
-# Version: 20160104 (mutt 1.7.2)
+# Version: 20170123 (mutt 1.7.2)
 #
 # References:
 # -> http://www.elho.net/mutt/maildir
@@ -39,6 +39,10 @@ set crypt_replyencrypt = yes
 # HTML  (Requires: .mailcap + links/w3m)
 set mailcap_path="~/.mutt/mailcap"
 auto_view text/html
+
+# set index format
+set date_format="%Y-%m-%d %T"
+set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"
 
 # mutt version
 push <show-version>
@@ -122,24 +126,26 @@ set mime_forward_rest=yes
 
 # Headers
 ignore *
-unignore from subject to cc date x-mailer x-url user-agent x-operating-system x-pgp-key
+unignore from subject to cc date x-mailer x-url user-agent x-operating-system x-pgp-key X-TLS-Protocol X-TLS-Cipher
 unhdr_order *
-hdr_order subject from to cc date
+hdr_order subject from to cc date X-TLS-Protocol X-TLS-Cipher
 my_hdr X-Operating-System: `uname -s` `uname -r`
 # my_hdr X-PGP-Key: http://example.org/~user/pubkey.asc
 
 ### COLOR DEFINITIONS ###
 
+# for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n" ; done | column
+
 # basic colors
 color normal white default
 color error brightred default
 color tilde magenta default
-color message brightgreen default
+color message white default
 color markers brightcyan default
 color attachment brightcyan default
-color search default green
-color status brightblue black
-color indicator brightyellow black
+color search brightwhite green
+color status brightyellow black
+color indicator white color241
 color tree blue default
 
 # index
@@ -151,14 +157,21 @@ color index brightred default "~D"   # deleted messages
 color hdrdefault white default
 color header brightyellow default ^Subject:
 color header brightwhite default ^From:
-color header magenta default ^User-Agent:
-color header magenta default ^X-Mailer:
-color header magenta default ^X-Operating-System:
-color header magenta default ^X-PGP-Key:
+color header color241 default  ^User-Agent:
+color header color241 default  ^X-Mailer:
+color header color241 default  ^X-Operating-System:
+color header color241 default  ^X-PGP-Key:
+color header green  default   "^(X-Tls-Protocol: TLSv1.3)"
+color header color241 default  "^(X-Tls-Protocol: TLSv1.2)"
+color header red default      "^(X-Tls-Protocol: TLSv1.1)"
+color header red default      "^(X-Tls-Protocol: TLSv1.0)"
+color header red default      "^(X-Tls-Protocol: NONE)"
+color header red default      "^(X-Tls-Cipher: NONE)"
+color header color241 default  "^(X-Tls-Cipher)"
 
 # body
 color quoted blue default
-color signature magenta default
+color signature color241 default
 color body magenta default "(ftp|http|https)://[^ ]+"  # point out URLs
 color body magenta default [-a-z_0-9.]+@[-a-z_0-9.]+   # e-mail addresses
 color underline brightgreen default
