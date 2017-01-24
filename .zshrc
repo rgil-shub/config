@@ -1,18 +1,20 @@
 # .zshrc
 
+# Version: 20170124 (ZSH 5.3.1 / FreeBSD 11)
+
 # Requires:
 # + zsh-syntax-highlighting
+
 # URLs:
 # + https://www.system-rescue-cd.org/Download
 # + https://wiki.archlinux.org/index.php/Zsh
-# Version: 20161230 (ZSH 5.2 / FreeBSD 11)
+# + https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 ### SYSTEMRESCUECD 4.8.1 ###                                                                                                                                                                                   
+
 autoload -U zutil
 autoload -U compinit
 autoload -U complist
-autoload -U promptinit && promptinit
-prompt walters
 
 bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
@@ -69,11 +71,15 @@ host_color="yellow"
 path_color="blue"
 date_color="white"
 
-host="%{$fg[$host_color]%}%n@%m"
-cpath="%B%{$fg[$path_color]%}%/%b"
+# host="%{$fg[$host_color]%}%n@%m"
+host="%{$fg_bold[$host_color]%}%n"
+cpath="%B%{$fg_bold[$path_color]%}%/%b"
+# ret_status="%(?:%{$fg_bold[green]%}✓ :%{$fg_bold[red]%}✗ )"
+# ret_status="%(?:%{$fg_bold[blue]%}➜ :%{$fg_bold[yellow]%}☹ %s)"
+ret_status="%(?:%{$fg_bold[blue]%}->:%{$fg_bold[yellow]%}:(%s)"
 end="%{$reset_color%}%% "
 
-PS1="$host $cpath $end"
+PS1="$host $cpath $ret_status $end"
 
 ### ARCHLINUX ###
 
@@ -86,8 +92,10 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # EXPORT
 
-export TERM='xterm-256color'
 export CLICOLOR='YES'
+# export LSCOLORS="ExGxFxdxCxDxDxhbadExEx";
+# export GREPCOLORS="ExGxFxDxCxDxDxHbAdExEx"
+export GREP_COLOR='1;33'
 export EDITOR='vim'
 export PAGER='less'
 
