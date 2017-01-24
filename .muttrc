@@ -1,19 +1,20 @@
 # ~/.muttrc
-#
+
 # Version: 20170124 (mutt 1.7.2)
-#
-# References:
-# -> http://www.elho.net/mutt/maildir
-# -> https://wiki.debian.org/Mutt
-# -> https://dev.mutt.org/trac/wiki/MuttGuide
-#
+
 # Requires:
 # + vim
 # + w3m
 # + spamassassin
 
+# References:
+# -> http://www.elho.net/mutt/maildir
+# -> https://wiki.debian.org/Mutt
+# -> https://dev.mutt.org/trac/wiki/MuttGuide
+
 # set language
 set charset="utf-8"
+set send_charset="utf-8"
 set locale="es_ES.utf-8"
 
 # set from to ensure mutt doesn't put user@localhost.localhost 
