@@ -1,6 +1,6 @@
 # ~/.muttrc
 #
-# Version: 20170123 (mutt 1.7.2)
+# Version: 20170124 (mutt 1.7.2)
 #
 # References:
 # -> http://www.elho.net/mutt/maildir
@@ -166,8 +166,8 @@ color header color241 default  "^(X-Tls-Protocol: TLSv1.2)"
 color header red default      "^(X-Tls-Protocol: TLSv1.1)"
 color header red default      "^(X-Tls-Protocol: TLSv1.0)"
 color header red default      "^(X-Tls-Protocol: NONE)"
-color header red default      "^(X-Tls-Cipher: NONE)"
 color header color241 default  "^(X-Tls-Cipher)"
+color header red default      "^(X-Tls-Cipher: NONE)"
 
 # body
 color quoted blue default
