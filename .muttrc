@@ -115,6 +115,9 @@ set text_flowed
 set sort=threads
 set sort_aux = reverse-date-received
 
+# Save copy of sent mail in thread
+folder-hook . 'set record="^"'
+
 # Collapse old messages
 set collapse_unread=no
 folder-hook . 'push <collapse-all>'
