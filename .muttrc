@@ -1,6 +1,6 @@
 # ~/.muttrc
 
-# Version: 20170124 (mutt 1.7.2)
+# Version: 20170125 (mutt 1.7.2)
 
 # Requires:
 # + vim
@@ -106,6 +106,9 @@ set pager_stop
 
 # Set default editor
 set editor="vim -c 'set spell spelllang=es,en'"
+
+# Format-Flowed
+set text_flowed
 
 # Sort messages by thread
 set sort=threads
