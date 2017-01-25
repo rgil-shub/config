@@ -16,6 +16,7 @@
 set charset="utf-8"
 set send_charset="utf-8"
 set locale="es_ES.utf-8"
+set attribution="En %d, %n escribió:"
 
 # set from to ensure mutt doesn't put user@localhost.localhost 
 set from="user@example.org"
