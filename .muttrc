@@ -17,19 +17,19 @@
 # -> https://wiki.archlinux.org/index.php/Mutt
 
 # set language
-set charset="utf-8"
-set send_charset="utf-8"
-set locale="es_ES.utf-8"
-set attribution="En %d, %n escribió:"
+set charset = "utf-8"
+set send_charset = "utf-8"
+set locale = "es_ES.utf-8"
+set attribution = "En %d, %n escribió:"
 
 # set default editor
-set editor="vim -c 'set spell spelllang=es,en'"
+set editor = "vim -c 'set spell spelllang=es,en'"
 
 # set from to ensure mutt doesn't put user@localhost.localhost 
-set from="user@example.org"
-set realname="username"
-set use_from=yes
-set envelope_from="yes"
+set from = "user@example.org"
+set realname = "username"
+set use_from = yes
+set envelope_from = yes
 
 # set signature
 set signature="~/.mutt/signature"
@@ -38,9 +38,9 @@ set signature="~/.mutt/signature"
 source ~/.mutt/colors
 
 # Alias
-set alias_file= ~/.mutt/aliases
-set sort_alias= alias
-set reverse_alias=yes
+set alias_file = ~/.mutt/aliases
+set sort_alias = alias
+set reverse_alias =yes
 source $alias_file
 
 # GnuPG
@@ -52,22 +52,22 @@ set crypt_autosign = yes
 set crypt_replyencrypt = yes
 
 # HTML  (Requires: .mailcap + links/w3m)
-set mailcap_path="~/.mutt/mailcap"
+set mailcap_path ="~/.mutt/mailcap"
 auto_view text/html
 
 ### LOCAL ###
 
 # First tell Mutt to use the Maildir format:
-set mbox_type=Maildir
+set mbox_type = Maildir
 
 # Next configure the locations of the common folders:
-set folder="~/Maildir"
-set mask="!^\\.[^.]"
-set mbox="~/Maildir"
-set record="+.Enviados"
-set postponed="+.Borradores"
-set trash="+.Papelera"
-set spoolfile="~/Maildir"
+set folder = "~/Maildir"
+set mask = "!^\\.[^.]"
+set mbox = "~/Maildir"
+set record = "+.Enviados"
+set postponed = "+.Borradores"
+set trash = "+.Papelera"
+set spoolfile = "~/Maildir"
 
 # Set up mailboxes by scanning for all subfolders in ~/Maildir:
 #mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -name ".*" -printf "+'%f' "`
@@ -106,7 +106,7 @@ set header_cache = "~/.mutt/headers"
 set message_cachedir = "~/.mutt/messages"
 
 # Display download progress every 5K
-set net_inc=5
+set net_inc = 5
 
 ### OTHER OPTIONS ###
 
@@ -114,32 +114,36 @@ set net_inc=5
 set beep_new = yes
 
 # Set index format
-set date_format="%Y-%m-%d %T"
-set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"
+set date_format = "%Y-%m-%d %T"
+set index_format = "%2C | %Z [%d] %-30.30F (%-4.4c) %s"
 
 # Split the screen to see index and pager/ body/ content at once
-set pager_index_lines=6
+set pager_index_lines = 6
 
 # Stops pager viewing next message
-set pager_stop
+set pager_stop = yes
 
 # Format-Flowed (text/plain; format=flowed)
 set text_flowed
 
 # Sort messages by thread
-set sort=threads
+set sort = threads
 set sort_aux = reverse-date-received
 
 # Save copy of sent mail in thread
-# folder-hook . 'set record="^"'
+# folder-hook . 'set record = "^"'
 
 # Collapse old messages
-set collapse_unread=no
+set collapse_unread = no
 folder-hook . 'push <collapse-all>'
+
+# Fast reply
+set fast_reply = yes
+set include = yes
 
 # Forwarding messages with attachments
 set mime_forward
-set mime_forward_rest=yes
+set mime_forward_rest = yes
 
 # Headers
 ignore *
