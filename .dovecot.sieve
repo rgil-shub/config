@@ -1,13 +1,14 @@
 # ~/.dovecot.sieve
 
-# Version: 20170124 (dovecot-2.2.27 & pigeonhole-0.4.16)
+# Version: 20170124 (dovecot-2.2.27 / pigeonhole-0.4.16)
+
+# Requires:
+# + dovecot-pigeonhole
 #
-# References:
+# URLs:
 # -> https://wiki2.dovecot.org/Pigeonhole/Sieve/Configuration
 # -> http://briefings.threeletter.agency/post/141741453298/displaying-a-starttls-indicator-with
 #
-# Requires:
-# + dovecot-pigeonhole
 
 require ["regex", "variables", "editheader", "fileinto"];
 
