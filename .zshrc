@@ -1,6 +1,6 @@
 # .zshrc
 
-# Version: 20170124 (ZSH 5.3.1 / FreeBSD 11)
+# Version: 20170126 (ZSH 5.3.1 / FreeBSD 11)
 
 # Requires:
 # + zsh-syntax-highlighting
@@ -115,3 +115,4 @@ alias ll='ls -l'
 alias grep='grep --color'
 alias vi='vim'
 alias updatedb='/usr/libexec/locate.updatedb'
+alias weather='\curl -s "wttr.in/Madrid?m"'
