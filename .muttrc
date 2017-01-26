@@ -40,7 +40,7 @@ source ~/.mutt/colors
 # Alias
 set alias_file = ~/.mutt/aliases
 set sort_alias = alias
-set reverse_alias =yes
+set reverse_alias = yes
 source $alias_file
 
 # GnuPG
@@ -124,7 +124,7 @@ set pager_index_lines = 6
 set pager_stop = yes
 
 # Format-Flowed (text/plain; format=flowed)
-set text_flowed
+set text_flowed = yes
 
 # Sort messages by thread
 set sort = threads
@@ -142,7 +142,7 @@ set fast_reply = yes
 set include = yes
 
 # Forwarding messages with attachments
-set mime_forward
+set mime_forward = yes
 set mime_forward_rest = yes
 
 # Headers
