@@ -12,6 +12,9 @@
 # -> https://wiki.debian.org/Mutt
 # -> https://dev.mutt.org/trac/wiki/MuttGuide
 # -> https://dev.mutt.org/trac/wiki/MuttFaq
+# -> https://dev.mutt.org/trac/wiki/MuttGuide/UseGPG
+# -> https://dev.mutt.org/trac/wiki/MuttGuide/Caching 
+# -> https://wiki.archlinux.org/index.php/Mutt
 
 # set language
 set charset="utf-8"
@@ -24,11 +27,9 @@ set editor="vim -c 'set spell spelllang=es,en'"
 
 # set from to ensure mutt doesn't put user@localhost.localhost 
 set from="user@example.org"
+set realname="username"
 set use_from=yes
 set envelope_from="yes"
-
-# set realname
-set realname="username"
 
 # set signature
 set signature="~/.mutt/signature"
@@ -43,7 +44,6 @@ set reverse_alias=yes
 source $alias_file
 
 # GnuPG
-# https://dev.mutt.org/trac/wiki/MuttGuide/UseGPG
 source ~/.mutt/gpg.rc
 # set pgp_use_gpg_agent = yes
 set pgp_sign_as = your_key_id 
@@ -70,7 +70,7 @@ set trash="+.Papelera"
 set spoolfile="~/Maildir"
 
 # Set up mailboxes by scanning for all subfolders in ~/Maildir:
-# mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -name ".*" -printf "+'%f' "`
+#mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -name ".*" -printf "+'%f' "`
 # Note that this requires find(1) from the GNU findutils, which on BSD systems usually is installed as gfind(1).
 mailboxes ! + `\
 for file in ~/Maildir/.*; do \
@@ -81,6 +81,8 @@ for file in ~/Maildir/.*; do \
     fi; \
 done`
 
+### MACROS ###
+
 # Add macros to make the folder browser usable by always using the mailboxes setup above:
 macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
@@ -90,17 +92,16 @@ macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 macro compose A "<attach-message>?<toggle-mailboxes>" "attach message(s) to this message"
 
-# Save the message to your archive folder:
+# Save message to the archive folder:
 macro index A  "<save-message>=.Archivos<enter>"  "mark message as Archived"
 macro pager A  "<save-message>=.Archivos<enter>"  "mark message as Archived"
 
-# Train spamassassin and move message to spam folder
+# Train spamassassin and move message to the spam folder
 macro index S "<enter-command>unset wait_key<enter><pipe-entry>sa-learn --spam<enter><enter-command>set wait_key<enter><save-message>=.Spam<enter>" "mark message as SPAM"
 
 ### IMAP ###
 
 # Cache (Mutt > 1.5.7 & 1.5.12) 
-# http://dev.mutt.org/trac/wiki/MuttGuide/Caching
 set header_cache = "~/.mutt/headers"
 set message_cachedir = "~/.mutt/messages"
 
@@ -150,5 +151,5 @@ hdr_order subject from to cc date X-TLS-Protocol X-TLS-Cipher
 my_hdr X-Operating-System: `uname -s` `uname -r`
 # my_hdr X-PGP-Key: http://example.org/~user/pubkey.asc
 
-# mutt version
+# Show mutt version
 push <show-version>
