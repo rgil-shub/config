@@ -1,0 +1,57 @@
+# ~/.mutt/colors
+
+# Version: 20170126 (mutt 1.7.2)
+
+# % for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n" ; done | column
+
+# basic colors
+color normal white default
+color error brightred default
+color tilde magenta default
+color message white default
+color markers brightcyan default
+color attachment brightcyan default
+color search brightwhite green
+color status brightyellow default
+# set arrow_cursor
+color indicator white color241
+color tree blue default
+
+# index
+color index brightwhite default "~O" # new messages
+color index brightwhite default "~N" # new messages
+color index brightred default "~D"   # deleted messages
+
+# headers
+color hdrdefault white default
+color header brightyellow default ^Subject:
+color header brightwhite default ^From:
+color header color241 default   ^User-Agent:
+color header color241 default   ^X-Mailer:
+color header color241 default   ^X-Operating-System:
+color header color241 default   ^X-PGP-Key:
+color header green  default   "^(X-Tls-Protocol: TLSv1.3)"
+color header color241 default   "^(X-Tls-Protocol: TLSv1.2)"
+color header red default      "^(X-Tls-Protocol: TLSv1.1)"
+color header red default      "^(X-Tls-Protocol: TLSv1.0)"
+color header red default      "^(X-Tls-Protocol: NONE)"
+color header color241 default   "^(X-Tls-Cipher)"
+color header red default      "^(X-Tls-Cipher: NONE)"
+
+# body
+color quoted blue default
+color signature color241 default
+color body magenta default "(ftp|http|https)://[^ ]+"  # point out URLs
+color body magenta default [-a-z_0-9.]+@[-a-z_0-9.]+   # e-mail addresses
+color underline brightgreen default
+
+# pgp
+color body yellow default "^gpg: .*"
+color body yellow default "^Hash: .*"
+color body brightred default "^gpg: Firma INCORRECTA.*"
+color body brightred default "^gpg: BAD signature.*"
+color body green default "^gpg: Firma correcta.*"
+color body green default "^gpg: Good signature .*"
+color body brightcyan default "-----BEGIN PGP SIGNED MESSAGE-----"
+color body brightcyan default "-----BEGIN PGP SIGNATURE-----"
+color body brightcyan default "-----END PGP SIGNATURE-----"
