@@ -15,16 +15,16 @@ color search brightwhite green
 color status brightyellow default
 # set arrow_cursor
 color indicator white color241
-color tree blue default
+color tree yellow default
 
 # index
 color index brightwhite default "~O" # new messages
 color index brightwhite default "~N" # new messages
-color index brightred default "~D"   # deleted messages
+color index color241 default "~D"   # deleted messages
 
 # headers
 color hdrdefault white default
-color header brightyellow default ^Subject:
+color header brightwhite default ^Subject:
 color header brightwhite default ^From:
 color header color241 default   ^User-Agent:
 color header color241 default   ^X-Mailer:
