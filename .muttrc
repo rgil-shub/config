@@ -1,6 +1,6 @@
 # ~/.muttrc
 
-# Version: 20170125 (mutt 1.7.2)
+# Version: 20170126 (mutt 1.7.2)
 
 # Requires:
 # + vim
@@ -60,6 +60,7 @@ set mask="!^\\.[^.]"
 set mbox="~/Maildir"
 set record="+.Enviados"
 set postponed="+.Borradores"
+set trash="+.Papelera"
 set spoolfile="~/Maildir"
 
 # Set up mailboxes by scanning for all subfolders in ~/Maildir:
@@ -116,7 +117,7 @@ set sort=threads
 set sort_aux = reverse-date-received
 
 # Save copy of sent mail in thread
-folder-hook . 'set record="^"'
+# folder-hook . 'set record="^"'
 
 # Collapse old messages
 set collapse_unread=no
