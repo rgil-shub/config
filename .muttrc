@@ -11,6 +11,7 @@
 # -> http://www.elho.net/mutt/maildir
 # -> https://wiki.debian.org/Mutt
 # -> https://dev.mutt.org/trac/wiki/MuttGuide
+# -> https://dev.mutt.org/trac/wiki/MuttFaq
 
 # set language
 set charset="utf-8"
@@ -114,6 +115,9 @@ set beep_new = yes
 # Set index format
 set date_format="%Y-%m-%d %T"
 set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"
+
+# Split the screen to see index and pager/ body/ content at once
+set pager_index_lines=6
 
 # Stops pager viewing next message
 set pager_stop
