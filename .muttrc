@@ -18,6 +18,9 @@ set send_charset="utf-8"
 set locale="es_ES.utf-8"
 set attribution="En %d, %n escribió:"
 
+# set default editor
+set editor="vim -c 'set spell spelllang=es,en'"
+
 # set from to ensure mutt doesn't put user@localhost.localhost 
 set from="user@example.org"
 set use_from=yes
@@ -32,6 +35,12 @@ set signature="~/.mutt/signature"
 # Colors
 source ~/.mutt/colors
 
+# Alias
+set alias_file= ~/.mutt/aliases
+set sort_alias= alias
+set reverse_alias=yes
+source $alias_file
+
 # GnuPG
 # https://dev.mutt.org/trac/wiki/MuttGuide/UseGPG
 source ~/.mutt/gpg.rc
@@ -44,13 +53,6 @@ set crypt_replyencrypt = yes
 # HTML  (Requires: .mailcap + links/w3m)
 set mailcap_path="~/.mutt/mailcap"
 auto_view text/html
-
-# set index format
-set date_format="%Y-%m-%d %T"
-set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"
-
-# mutt version
-push <show-version>
 
 ### LOCAL ###
 
@@ -106,16 +108,17 @@ set net_inc=5
 
 ### OTHER OPTIONS ###
 
-# beep
+# Beep
 set beep_new = yes
+
+# Set index format
+set date_format="%Y-%m-%d %T"
+set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"
 
 # Stops pager viewing next message
 set pager_stop
 
-# Set default editor
-set editor="vim -c 'set spell spelllang=es,en'"
-
-# Format-Flowed
+# Format-Flowed (text/plain; format=flowed)
 set text_flowed
 
 # Sort messages by thread
@@ -129,20 +132,19 @@ set sort_aux = reverse-date-received
 set collapse_unread=no
 folder-hook . 'push <collapse-all>'
 
-# Alias
-set alias_file= ~/.mutt/aliases
-set sort_alias= alias
-set reverse_alias=yes
-source $alias_file
-
 # Forwarding messages with attachments
 set mime_forward
 set mime_forward_rest=yes
 
 # Headers
 ignore *
-unignore from subject to cc date x-mailer x-url user-agent x-operating-system x-pgp-key X-TLS-Protocol X-TLS-Cipher
+unignore from subject to cc date 
+unignore x-mailer x-url user-agent x-operating-system x-pgp-key
+unignore X-TLS-Protocol X-TLS-Cipher
 unhdr_order *
 hdr_order subject from to cc date X-TLS-Protocol X-TLS-Cipher
 my_hdr X-Operating-System: `uname -s` `uname -r`
 # my_hdr X-PGP-Key: http://example.org/~user/pubkey.asc
+
+# mutt version
+push <show-version>
