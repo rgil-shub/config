@@ -1,6 +1,6 @@
 # ~/.muttrc
 
-# Version: 20170126 (mutt 1.7.2)
+# Version: 20170130 (mutt 1.7.2)
 
 # Requires:
 # + vim
@@ -147,11 +147,15 @@ set mime_forward_rest = yes
 
 # Headers
 ignore *
-unignore from subject to cc date 
+unignore from subject to cc date
 unignore x-mailer x-url user-agent x-operating-system x-pgp-key
 unignore X-TLS-Protocol X-TLS-Cipher
+unignore X-Priority
 unhdr_order *
-hdr_order subject from to cc date X-TLS-Protocol X-TLS-Cipher
+hdr_order date from to cc subject \
+    X-TLS-Protocol X-TLS-Cipher \
+    x-mailer x-url user-agent x-operating-system x-pgp-key \
+    X-Priority
 my_hdr X-Operating-System: `uname -s` `uname -r`
 # my_hdr X-PGP-Key: http://example.org/~user/pubkey.asc
 
