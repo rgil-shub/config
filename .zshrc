@@ -1,14 +1,16 @@
 # .zshrc
 
-# Version: 20170126 (ZSH 5.3.1 / FreeBSD 11)
+# Version: 20170301 (ZSH 5.3.1 / FreeBSD 11)
 
 # Requires:
 # + zsh-syntax-highlighting
+# + py27-powerline-status
 
 # URLs:
 # + https://www.system-rescue-cd.org/Download
 # + https://wiki.archlinux.org/index.php/Zsh
 # + https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# + https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html#zsh-prompt
 
 ### SYSTEMRESCUECD 4.8.1 ###                                                                                                                                                                                   
 
@@ -91,14 +93,12 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ### SHUB ###
 
 # EXPORT
-
 export CLICOLOR='YES'
 # export LSCOLORS="ExGxFxdxCxDxDxhbadExEx";
 # export GREPCOLORS="ExGxFxDxCxDxDxHbAdExEx"
 export GREP_COLOR='1;33'
 export EDITOR='vim'
 export PAGER='less'
-
 export LESS_TERMCAP_mb=$'\E[01;37m'
 export LESS_TERMCAP_md=$'\E[01;37m'
 export LESS_TERMCAP_me=$'\E[0m'
@@ -108,7 +108,6 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;31m'
 
 # ALIAS
-
 alias curl='curl -C - -O'
 alias ls='ls -G -F'
 alias ll='ls -l'
@@ -116,3 +115,6 @@ alias grep='grep --color'
 alias vi='vim'
 alias updatedb='/usr/libexec/locate.updatedb'
 alias weather='\curl -s "wttr.in/Madrid?m"'
+
+# POWERLINE
+# source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
