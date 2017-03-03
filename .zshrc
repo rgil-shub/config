@@ -1,6 +1,6 @@
 # .zshrc
 
-# Version: 20170301 (ZSH 5.3.1 / FreeBSD 11)
+# Version: 20170303 (ZSH 5.3.1 / FreeBSD 11)
 
 # Requires:
 # + zsh-syntax-highlighting
@@ -93,6 +93,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ### SHUB ###
 
 # EXPORT
+export TERM='xterm-256color'
 export CLICOLOR='YES'
 # export LSCOLORS="ExGxFxdxCxDxDxhbadExEx";
 # export GREPCOLORS="ExGxFxDxCxDxDxHbAdExEx"
