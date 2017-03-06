@@ -1,13 +1,11 @@
 " .vimrc
 
 " Requires: 
-" + monokai colorscheme
 " + vim-spell-en vim-spell-es
 " URLs:
-" + https://github.com/sickill/vim-monokai
 " + ftp://ftp.vim.org/pub/vim/runtime/spell
 " + http://vimdoc.sourceforge.net/htmldoc/options.html
-" Version: 20170303
+" Version: 20170306
 
 " SPELL 
 " set spell
@@ -16,7 +14,7 @@
 
 " COLOR
 set background=dark  " (dark/light) background
-" colorscheme monokai  " colorscheme dir: ~/.vim/colors
+set termguicolors
 
 " SYNTAX
 syntax on            " Syntax highlighting
