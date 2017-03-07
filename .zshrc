@@ -4,6 +4,7 @@
 
 # Requires:
 # + gnuls
+# + vim | vim-lite
 # + zsh-syntax-highlighting
 # + py27-powerline-status
 
