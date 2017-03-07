@@ -1,5 +1,5 @@
 # ~/.bashrc
-# Version: 20160304
+# Version: 20170307
 
 # Source global definitions
 # RHEL
@@ -16,6 +16,7 @@ fi
 
 # PROMPT
 PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;33m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\\$\[\033[00m\] "
+# PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;35m\]\h'; else echo '\[\033[01;36m\]\u@\h'; fi)\[\033[01;37m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;36m\]:(\[\033[01;37m\] \")\\$\[\033[00m\] "
 
 # ALIAS & COLORS
 
@@ -36,6 +37,9 @@ alias dd='dd status=progress'
 # grep
 alias grep='grep --color'
 #export GREP_COLOR='1;31'
+
+# diff (diffutils 3.4+)
+#alias diff='diff --color'
 
 # mount
 alias mount='mount | column -t'
@@ -72,6 +76,8 @@ shopt -s histappend
 shopt -s checkwinsize
 
 # ARCHLINUX
+# ls color highlighting
+#eval $(dircolors -p | perl -pe 's/^((CAP|S[ET]|O[TR]|M|E)\w+).*/$1 00/' | dircolors -)
 # get recommened packages when command not found (requires pkgfile --update)
 #source /usr/share/doc/pkgfile/command-not-found.bash
 # update grub2 config
