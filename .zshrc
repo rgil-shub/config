@@ -1,6 +1,6 @@
 # .zshrc
 
-# Version: 20170308 (ZSH 5.3.1 / FreeBSD 11)
+# Version: 20170310 (ZSH 5.3.1 / FreeBSD 11)
 
 # Requires:
 # + gnuls
@@ -13,8 +13,9 @@
 # + https://wiki.archlinux.org/index.php/Zsh
 # + https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # + https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html#zsh-prompt
+# + https://sourceforge.net/p/systemrescuecd/code/ci/master/tree/overlay-squashfs-x86/root/.zshrc
 
-### SYSTEMRESCUECD 4.8.1 ###                                                                                                                                                                                   
+### SYSTEMRESCUECD 4.9.3 ###                                                                                                                                                                                   
 
 autoload -U zutil
 autoload -U compinit
@@ -34,11 +35,6 @@ bindkey '\eOF' end-of-line
 
 # Activation
 compinit
-
-# HISTORY
-export HISTSIZE=512
-export SAVEHIST=512
-HISTFILE=~/.history
 
 # COMPLETION
 
@@ -72,7 +68,9 @@ colors
 
 # define your colors here (i hate white background)
 host_color="yellow"
+# host_color="red"
 path_color="blue"
+# path_color="white"
 date_color="white"
 
 # host="%{$fg[$host_color]%}%n@%m"
@@ -83,6 +81,7 @@ cpath="%B%{$fg_bold[$path_color]%}%/%b"
 ret_status="%(?:%{$fg_bold[blue]%}->:%{$fg_bold[yellow]%}:(%s)"
 end="%{$reset_color%}%% "
 
+# PS1="$host $cpath $end"
 PS1="$host $cpath $ret_status $end"
 
 ### ARCHLINUX ###
@@ -93,6 +92,11 @@ zstyle ':completion:*' rehash true
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ### SHUB ###
+
+# HISTORY
+export HISTSIZE=512
+export SAVEHIST=512
+HISTFILE=~/.history
 
 # EXPORT
 export TERM='xterm-256color'
