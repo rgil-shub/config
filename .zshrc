@@ -1,6 +1,6 @@
 # .zshrc
 
-# Version: 20170310 (ZSH 5.3.1 / FreeBSD 11)
+# Version: 20170315 (ZSH 5.3.1 / FreeBSD 11)
 
 # Requires:
 # + cache dir: ~/.zsh/cache
@@ -51,6 +51,8 @@ zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %
 zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
 # auto rehash
 zstyle ':completion:*' rehash true
+# cd ..<TAB>
+zstyle ':completion:*' special-dirs true
 # cache
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
