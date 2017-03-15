@@ -109,6 +109,7 @@ export CLICOLOR='YES'
 # export LSCOLORS="ExGxFxdxCxDxDxhbadExEx";
 # export GREPCOLORS="ExGxFxDxCxDxDxHbAdExEx"
 export GREP_COLOR='1;33'
+# export GREP_COLOR='1;31'
 export LESS_TERMCAP_mb=$'\E[01;37m'
 export LESS_TERMCAP_md=$'\E[01;37m'
 export LESS_TERMCAP_me=$'\E[0m'
