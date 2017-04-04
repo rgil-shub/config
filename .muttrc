@@ -1,6 +1,6 @@
 # ~/.muttrc
 
-# Version: 20170130 (mutt 1.7.2)
+# Version: 20170404 (mutt 1.8.0)
 
 # Requires:
 # + vim
@@ -19,7 +19,6 @@
 # set language
 set charset = "utf-8"
 set send_charset = "utf-8"
-set locale = "es_ES.utf-8"
 set attribution = "En %d, %n escribió:"
 
 # set default editor
