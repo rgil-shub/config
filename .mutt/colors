@@ -1,6 +1,6 @@
 # ~/.mutt/colors
 
-# Version: 20170315 (mutt 1.7.2)
+# Version: 20170409 (mutt 1.8.0)
 
 # % for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n" ; done | column
 
@@ -23,9 +23,9 @@ color index brightblue  default "~v" # threads
 color index magenta     default "~F" # flagged messages
 color index green       default "~T" # tagged messages
 color index red         default "~=" # duplicated messages
-color index brightred   default "~D" # deleted messages
 color index brightwhite default "~O" # new messages
 color index brightwhite default "~N" # new messages
+color index brightred   default "~D" # deleted messages
 
 # headers
 color hdrdefault white   default                                                                                                                                                                                 
