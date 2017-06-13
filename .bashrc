@@ -1,5 +1,5 @@
 # ~/.bashrc
-# Version: 20170313
+# Version: 20170613
 
 # Source global definitions
 # RHEL
@@ -47,6 +47,9 @@ alias grep='grep --color'
 
 # diff (diffutils 3.4+)
 #alias diff='diff --color'
+
+# tree
+alias tree='tree -C'
 
 # mount
 alias mount='mount | column -t'
