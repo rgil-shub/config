@@ -51,6 +51,9 @@ alias grep='grep --color'
 # tree
 alias tree='tree -C'
 
+# ip (iproute2 4.1+)
+# alias ip='ip -c'
+
 # mount
 alias mount='mount | column -t'
 
