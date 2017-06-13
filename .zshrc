@@ -1,6 +1,6 @@
 # .zshrc
 
-# Version: 20170327 (ZSH 5.3.1 / FreeBSD 11)
+# Version: 20170613 (ZSH 5.3.1 / FreeBSD 11)
 
 # Requires:
 # + cache dir: ~/.zsh/cache
@@ -129,6 +129,7 @@ alias curl='curl -C - -O'
 alias ls='gnuls --color'
 alias ll='ls -l'
 alias grep='grep --color'
+alias tree='tree -C'
 alias vi='vim'
 alias updatedb='/usr/libexec/locate.updatedb'
 alias weather='\curl -s "wttr.in/Madrid?m"'
