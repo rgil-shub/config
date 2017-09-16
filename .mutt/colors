@@ -1,6 +1,6 @@
 # ~/.mutt/colors
 
-# Version: 20170409 (mutt 1.8.0)
+# Version: 20170916 (mutt 1.9.0)
 
 # % for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n" ; done | column
 
@@ -26,6 +26,13 @@ color index red         default "~=" # duplicated messages
 color index brightwhite default "~O" # new messages
 color index brightwhite default "~N" # new messages
 color index brightred   default "~D" # deleted messages
+
+# compose
+color compose header brightwhite default
+color compose security_none red default
+color compose security_encrypt brightgreen default
+color compose security_sign brightgreen default
+color compose security_both brightgreen default
 
 # headers
 color hdrdefault white   default                                                                                                                                                                                 
