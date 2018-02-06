@@ -1,13 +1,13 @@
 # .zshrc
 
-# Version: 20170613 (ZSH 5.3.1 / FreeBSD 11)
+# Version: 20180206 (ZSH 5.4.2 / FreeBSD 11)
 
 # Requires:
 # + cache dir: ~/.zsh/cache
 # + gnuls
-# + vim | vim-lite
+# + vim | vim-console
 # + zsh-syntax-highlighting
-# + py27-powerline-status
+# + py36-powerline-status
 
 # URLs:
 # + https://www.system-rescue-cd.org/Download
@@ -136,4 +136,4 @@ alias weather='\curl -s "wttr.in/Madrid?m"'
 
 # POWERLINE
 
-# source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+# source /usr/local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
