@@ -125,15 +125,14 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ALIAS
 alias curl='curl -C - -O'
+alias grep='grep --color'
 # alias ls='ls -G -F'
 alias ls='gnuls --color'
 alias ll='ls -l'
-alias grep='grep --color'
 alias tree='tree -C'
 alias vi='vim'
 alias updatedb='/usr/libexec/locate.updatedb'
 alias weather='\curl -s "wttr.in/Madrid?m"'
 
 # POWERLINE
-
 # source /usr/local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
