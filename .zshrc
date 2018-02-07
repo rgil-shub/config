@@ -73,49 +73,51 @@ setopt PRINT_EIGHT_BIT
 autoload -U colors
 colors
 
-# Arch Linux colors (user)
-# host_color="cyan"
-# path_color="white"
-# uid_color="white"
-# ret_0_color="white"
-# ret_1_color="cyan"
-# shell_color="magenta"
-# exit_color="cyan"
-# jobs_color="cyan"
-# date_color="white"
-
-# Arch Linux colors (root)
-# host_color="magenta"
-# path_color="white"
-# uid_color="magenta"
-# ret_0_color="white"
-# ret_1_color="magenta"
-# shell_color="magenta"
-# exit_color="cyan"
-# jobs_color="cyan"
-# date_color="white"
+# Arch Linux colors
+if [ "${EUID}" -ne 0 ] ; then
+    # host_color="cyan"
+    # path_color="white"
+    # uid_color="white"
+    # ret_0_color="white"
+    # ret_1_color="cyan"
+    # shell_color="magenta"
+    # exit_color="cyan"
+    # jobs_color="cyan"
+    # date_color="white"
+else
+    # host_color="magenta"
+    # path_color="white"
+    # uid_color="magenta"
+    # ret_0_color="white"
+    # ret_1_color="magenta"
+    # shell_color="magenta"
+    # exit_color="cyan"
+    # jobs_color="cyan"
+    # date_color="white"
+fi
 
 # FreeBSD colors (user)
-host_color="white"
-path_color="red"
-uid_color="white"
-ret_0_color="white"
-ret_1_color="red"
-shell_color="white"
-exit_color="white"
-jobs_color="white"
-date_color="white"
-
-# FreeBSD colors (root)
-# host_color="red"
-# path_color="white"
-# uid_color="red"
-# ret_0_color="white"
-# ret_1_color="red"
-# shell_color="white"
-# exit_color="white"
-# jobs_color="white"
-# date_color="white"
+if [ "${EUID}" -ne 0 ] ; then
+    host_color="white"
+    path_color="red"
+    uid_color="white"
+    ret_0_color="white"
+    ret_1_color="red"
+    shell_color="white"
+    exit_color="white"
+    jobs_color="white"
+    date_color="white"
+else
+    host_color="red"
+    path_color="white"
+    uid_color="red"
+    ret_0_color="white"
+    ret_1_color="red"
+    shell_color="white"
+    exit_color="white"
+    jobs_color="white"
+    date_color="white"
+fi
 
 host="%{$fg_bold[$host_color]%}%n@%m"
 cpath="%{$fg_bold[$path_color]%}%~"
