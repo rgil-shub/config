@@ -1,6 +1,6 @@
 # .zshrc
 
-# Version: 20180206 (ZSH 5.4.2 / FreeBSD 11)
+# Version: 20180207 (ZSH 5.4.2 / FreeBSD 11.1)
 
 # Requires:
 # + cache dir: ~/.zsh/cache
@@ -73,25 +73,61 @@ setopt PRINT_EIGHT_BIT
 autoload -U colors
 colors
 
-# define your colors here (i hate white background)
-host_color="yellow"
-# host_color="red"
-path_color="blue"
+# Arch Linux colors (user)
+# host_color="cyan"
 # path_color="white"
+# uid_color="white"
+# ret_0_color="white"
+# ret_1_color="cyan"
+# shell_color="magenta"
+# exit_color="cyan"
+# jobs_color="cyan"
+# date_color="white"
+
+# Arch Linux colors (root)
+# host_color="magenta"
+# path_color="white"
+# uid_color="magenta"
+# ret_0_color="white"
+# ret_1_color="magenta"
+# shell_color="magenta"
+# exit_color="cyan"
+# jobs_color="cyan"
+# date_color="white"
+
+# FreeBSD colors (user)
+host_color="white"
+path_color="red"
+uid_color="white"
+ret_0_color="white"
+ret_1_color="red"
+shell_color="white"
+exit_color="white"
+jobs_color="white"
 date_color="white"
 
-# host="%{$fg[$host_color]%}%n@%m"
-host="%{$fg_bold[$host_color]%}%n"
-cpath="%B%{$fg_bold[$path_color]%}%/%b"
-# ret_status examples
-# ret_status="%(?:%{$fg_bold[green]%}✓ :%{$fg_bold[red]%}✗ )"
-# ret_status="%(?:%{$fg_bold[blue]%}➜ :%{$fg_bold[yellow]%}☹ %s)"
-# ret_status="%(?:%{$fg_bold[white]%}->:%{$fg_bold[red]%}:(%s)"
-ret_status="%(?:%{$fg_bold[blue]%}->:%{$fg_bold[yellow]%}:(%s)"
-end="%{$reset_color%}%% "
+# FreeBSD colors (root)
+# host_color="red"
+# path_color="white"
+# uid_color="red"
+# ret_0_color="white"
+# ret_1_color="red"
+# shell_color="white"
+# exit_color="white"
+# jobs_color="white"
+# date_color="white"
 
-# PS1="$host $cpath $end"
-PS1="$host $cpath $ret_status $end"
+host="%{$fg_bold[$host_color]%}%n@%m"
+cpath="%B%{$fg_bold[$path_color]%}%~%b"
+ret_status="%(?:%{$fg_bold[$ret_0_color]%}->:%{$fg_bold[$ret_1_color]%}:(%s)"
+# ret_status="%(?:%{$fg_bold[$ret_0_color]%}✓ :%{$fg_bold[$ret_1_color]%}✗ )"
+# ret_status="%(?:%{$fg_bold[$ret_0_color]%}➜ :%{$fg_bold[$ret_1_color]%}☹ %s)"
+uid="%{$fg_bold[$uid_color]%}%#"
+end="%{$reset_color%}% "
+
+PROMPT="$host $cpath $ret_status $uid $end"
+RPROMPT="[%F{$shell_color}%N%f] [%F{$exit_color}> %?%f] [%F{$jobs_color}+ %j%f] [%F{$date_color}%*%f]"
+# RPROMPT="[%F{$shell_color}%N%f] [%F{$exit_color}↪ %?%f] [%F{$jobs_color}⚙ %j%f] [%F{$date_color}%*%f]"
 
 # HISTORY
 export HISTSIZE=512
