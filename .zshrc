@@ -74,7 +74,7 @@ autoload -U colors
 colors
 
 # Arch Linux colors
-if [ "${EUID}" -ne 0 ] ; then
+# if [ "${EUID}" -ne 0 ] ; then
     # host_color="cyan"
     # path_color="white"
     # uid_color="white"
@@ -84,7 +84,7 @@ if [ "${EUID}" -ne 0 ] ; then
     # exit_color="cyan"
     # jobs_color="cyan"
     # date_color="white"
-else
+# else
     # host_color="magenta"
     # path_color="white"
     # uid_color="magenta"
@@ -94,7 +94,7 @@ else
     # exit_color="cyan"
     # jobs_color="cyan"
     # date_color="white"
-fi
+# fi
 
 # FreeBSD colors (user)
 if [ "${EUID}" -ne 0 ] ; then
