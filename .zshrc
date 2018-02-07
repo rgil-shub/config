@@ -146,8 +146,7 @@ export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 # export LSCOLORS="ExGxFxdxCxDxDxhbadExEx";
 export CLICOLOR='YES'
 # export GREPCOLORS="ExGxFxDxCxDxDxHbAdExEx"
-export GREP_COLOR='1;33'
-# export GREP_COLOR='1;31'
+export GREP_COLOR='1;31'
 export LESS_TERMCAP_mb=$'\E[01;37m'
 export LESS_TERMCAP_md=$'\E[01;37m'
 export LESS_TERMCAP_me=$'\E[0m'
