@@ -107,6 +107,7 @@ if [ "${EUID}" -ne 0 ] ; then
     exit_color="white"
     jobs_color="white"
     date_color="white"
+    host="%{$fg_bold[$host_color]%}%n@%m"
 else
     host_color="red"
     path_color="white"
@@ -117,9 +118,9 @@ else
     exit_color="white"
     jobs_color="white"
     date_color="white"
+    host="%{$fg_bold[$host_color]%}%m"
 fi
 
-host="%{$fg_bold[$host_color]%}%n@%m"
 cpath="%{$fg_bold[$path_color]%}%~"
 ret_status="%(?:%{$fg_bold[$ret_0_color]%}->:%{$fg_bold[$ret_1_color]%}:()"
 # ret_status="%(?:%{$fg_bold[$ret_0_color]%}✓ :%{$fg_bold[$ret_1_color]%}✗)"
