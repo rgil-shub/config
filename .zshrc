@@ -1,6 +1,6 @@
 # .zshrc
 
-# Version: 20180207 (ZSH 5.4.2 / FreeBSD 11.1)
+# Version: 20180221 (ZSH 5.4.2 / FreeBSD 11.1)
 
 # Requires:
 # + cache dir: ~/.zsh/cache
@@ -84,6 +84,7 @@ colors
     # exit_color="cyan"
     # jobs_color="cyan"
     # date_color="white"
+    # host="%{$fg_bold[$host_color]%}%n@%m"
 # else
     # host_color="magenta"
     # path_color="white"
@@ -94,6 +95,7 @@ colors
     # exit_color="cyan"
     # jobs_color="cyan"
     # date_color="white"
+    # host="%{$fg_bold[$host_color]%}%m"
 # fi
 
 # FreeBSD colors (user)
