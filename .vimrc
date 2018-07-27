@@ -6,7 +6,7 @@
 " + ftp://ftp.vim.org/pub/vim/runtime/spell
 " + http://vimdoc.sourceforge.net/htmldoc/options.html
 " + https://github.com/chriskempson/base16-vim/
-" Version: 20170327
+" Version: 20180727
 
 " SPELL 
 " set spell
@@ -15,7 +15,7 @@
 
 " COLOR
 set background=dark  " (dark/light) background
-set termguicolors
+" set termguicolors
 " colorscheme base16-default-dark
 " colorscheme base16-tomorrow-night
 
