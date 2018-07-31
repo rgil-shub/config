@@ -1,6 +1,6 @@
 # .zshrc
 
-# Version: 20180221 (ZSH 5.4.2 / FreeBSD 11.1)
+# Version: 20180731 (ZSH 5.5.1 / FreeBSD 11.2)
 
 # Requires:
 # + cache dir: ~/.zsh/cache
@@ -59,7 +59,7 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
 # OPTIONS
-setopt CORRECT
+# setopt CORRECT
 setopt ALWAYS_TO_END
 setopt NOTIFY
 setopt NOBEEP
@@ -173,11 +173,15 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;31m'
 
 # zsh-syntax-highlighting 
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ALIAS
 alias curl='curl -C - -O'
+# alias dd='dd status=progress'
 alias grep='grep --color'
+alias ip='ip -c'
+# alias ls='ls --color'
 # alias ls='ls -G -F'
 alias ls='gnuls --color'
 alias ll='ls -l'
@@ -187,4 +191,7 @@ alias updatedb='/usr/libexec/locate.updatedb'
 alias weather='\curl -s "wttr.in/Madrid?m"'
 
 # POWERLINE
+# source /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 # source /usr/local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+
+
