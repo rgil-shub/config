@@ -1,6 +1,6 @@
 # ~/.mutt/colors
 
-# Version: 20170916 (mutt 1.9.0)
+# Version: 20181130 (mutt 1.10.1)
 
 # % for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n" ; done | column
 
@@ -74,8 +74,10 @@ color body yellow     default "^gpg: .*"
 color body yellow     default "^Hash: .*"
 color body brightred  default "^gpg: Firma INCORRECTA.*"
 color body brightred  default "^gpg: BAD signature.*"
+color body brightred  default "^Bad signature from:*"
 color body green      default "^gpg: Firma correcta.*"
 color body green      default "^gpg: Good signature .*"
+color body green      default "^Good signature from:*"
 color body brightcyan default "-----BEGIN PGP SIGNED MESSAGE-----"
 color body brightcyan default "-----BEGIN PGP SIGNATURE-----"
 color body brightcyan default "-----END PGP SIGNATURE-----"
