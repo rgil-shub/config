@@ -1,12 +1,13 @@
 # .zshrc
 
-# Version: 20180731 (ZSH 5.5.1 / FreeBSD 11.2)
+# Version: 20190522 (ZSH 5.7.1 / FreeBSD 11.2)
 
 # Requires:
 # + cache dir: ~/.zsh/cache
 # + gnuls
 # + vim | vim-console
 # + zsh-syntax-highlighting
+# + zsh-autosuggestions
 # + py36-powerline-status
 
 # URLs:
@@ -175,6 +176,9 @@ export LESS_TERMCAP_us=$'\E[04;31m'
 # zsh-syntax-highlighting 
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# zsh-autosuggestions
+# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ALIAS
 alias curl='curl -C - -O'
