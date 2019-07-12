@@ -1,5 +1,5 @@
 # ~/.bashrc
-# Version: 20170613
+# Version: 20190713
 
 # Source global definitions
 # RHEL
@@ -51,11 +51,11 @@ alias grep='grep --color'
 # tree
 alias tree='tree -C'
 
-# ip (iproute2 4.1+)
-# alias ip='ip -c'
+# ip (iproute2 4.1+ RHEL7+)
+alias ip='ip -c'
 
 # mount
-alias mount='mount | column -t'
+# alias mount='mount | column -t'
 
 # man
 export LESS_TERMCAP_mb=$'\E[01;34m'
