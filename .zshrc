@@ -1,6 +1,6 @@
 # .zshrc
 
-# Version: 20190522 (ZSH 5.7.1 / FreeBSD 11.2)
+# Version: 20190713 (ZSH 5.7.1 / FreeBSD 11.3)
 
 # Requires:
 # + cache dir: ~/.zsh/cache
@@ -182,7 +182,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ALIAS
 alias curl='curl -C - -O'
-# alias dd='dd status=progress'
+alias dd='dd status=progress'
 alias grep='grep --color'
 alias ip='ip -c'
 # alias ls='ls --color'
