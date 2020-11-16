@@ -1,6 +1,6 @@
 # ~/.mutt/colors
 
-# Version: 20190601 (mutt 1.12.0)
+# Version: 20201116 (mutt 2.0.0)
 
 # % for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n" ; done | column
 
@@ -14,7 +14,7 @@ color attachment brightcyan    default
 color search     brightwhite   green
 color status     brightyellow  default                                                                                                                                                                           
 # set arrow_cursor
-color indicator  brightyellow  color236
+color indicator underline yellow color236
 color tree       yellow        default
 
 # index
